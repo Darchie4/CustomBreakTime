@@ -5,6 +5,7 @@ import com.comphenix.protocol.ProtocolLibrary;
 import com.comphenix.protocol.ProtocolManager;
 import custombreaktime.custombreaktime.listeners.BlockBreakAbortPacketListener;
 import custombreaktime.custombreaktime.listeners.BlockDamageEventListener;
+import custombreaktime.custombreaktime.listeners.LoginListener;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -23,6 +24,7 @@ public final class CustomBreakTime extends JavaPlugin {
         this.protocolManager.addPacketListener(new BlockBreakAbortPacketListener(this, PacketType.Play.Client.BLOCK_DIG));
 
         Bukkit.getPluginManager().registerEvents(new BlockDamageEventListener(this.protocolManager, this),this);
+        Bukkit.getPluginManager().registerEvents(new LoginListener(),this);
 
         this.getCommand("testings").setExecutor(new CommandHandler(this));
 

@@ -15,14 +15,17 @@ public class BreakerRunnable implements Runnable {
     private Block block;
     private CustomBreakTime plugin;
     private boolean stop;
+    private float animationTime;
 
 
-    public BreakerRunnable(Player player, ProtocolManager protocolManager, Block block, CustomBreakTime plugin) {
+    public BreakerRunnable(Player player, ProtocolManager protocolManager, Block block, CustomBreakTime plugin, float breakSpeed) {
         this.player = player;
         this.protocolManager = protocolManager;
         this.block = block;
         this.plugin = plugin;
         this.stop = false;
+        this.animationTime = (block.getType().getHardness() / breakSpeed) / 10;
+        player.sendMessage("Animation timer: " + animationTime);
     }
 
     @Override
@@ -31,7 +34,7 @@ public class BreakerRunnable implements Runnable {
             PacketContainer brokenBlock = createBlockBreakAnimationPacket(i);
             protocolManager.broadcastServerPacket(brokenBlock);
             try {
-                Thread.sleep(100);
+                Thread.sleep(Math.round(animationTime));
             } catch (InterruptedException e) {
 
             }

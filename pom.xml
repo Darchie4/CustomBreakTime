@@ -11,7 +11,7 @@
 
     <name>CustomBreakTime</name>
 
-    <description>A Paper plugin to change the time to breake a block</description>
+    <description>A Paper plugin to change the time to break a block</description>
     <properties>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -84,7 +84,7 @@
         <dependency>
             <groupId>org.jetbrains</groupId>
             <artifactId>annotations</artifactId>
-            <version>19.0.0</version>
+            <version>23.0.0</version>
         </dependency>
     </dependencies>
 </project>
