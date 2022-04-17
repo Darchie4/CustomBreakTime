@@ -1,6 +1,7 @@
 package custombreaktime.custombreaktime.utils;
 
 import org.bukkit.Material;
+import org.bukkit.block.Block;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
@@ -30,5 +31,10 @@ public class BreakTimeCalculatorUtil {
         breakingSpeed += item.getEnchantmentLevel(Enchantment.DIG_SPEED)*0.0002;
 
         return breakingSpeed;
+    }
+
+    private float test(){
+
+        return (float)0.0;
     }
 }

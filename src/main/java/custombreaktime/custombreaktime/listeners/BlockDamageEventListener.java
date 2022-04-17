@@ -5,6 +5,7 @@ import custombreaktime.custombreaktime.BreakerRunnable;
 import custombreaktime.custombreaktime.CustomBreakTime;
 import custombreaktime.custombreaktime.utils.BreakTimeCalculatorUtil;
 import org.bukkit.Bukkit;
+import org.bukkit.Material;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockDamageEvent;
@@ -22,7 +23,7 @@ public class BlockDamageEventListener implements Listener {
     public void onBlockDamage(BlockDamageEvent event){
         BreakTimeCalculatorUtil breakTimeCalculatorUtil = new BreakTimeCalculatorUtil(event.getPlayer());
         if (!event.getInstaBreak()){
-            BreakerRunnable task = new BreakerRunnable(event.getPlayer(), this.protocolManager, event.getBlock(), this.plugin, breakTimeCalculatorUtil.getBreakingPower());
+            BreakerRunnable task = new BreakerRunnable(event.getPlayer(), this.protocolManager, event.getBlock(), this.plugin);
             plugin.getRunnableMap().put(event.getPlayer(), task);
             Bukkit.getScheduler().runTaskAsynchronously(plugin, task);
         }

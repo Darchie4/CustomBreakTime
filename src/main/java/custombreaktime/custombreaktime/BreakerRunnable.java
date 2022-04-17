@@ -15,16 +15,17 @@ public class BreakerRunnable implements Runnable {
     private Block block;
     private CustomBreakTime plugin;
     private boolean stop;
-    private float animationTime;
+    private double animationTime;
 
 
-    public BreakerRunnable(Player player, ProtocolManager protocolManager, Block block, CustomBreakTime plugin, float breakSpeed) {
+    public BreakerRunnable(Player player, ProtocolManager protocolManager, Block block, CustomBreakTime plugin) {
         this.player = player;
         this.protocolManager = protocolManager;
         this.block = block;
         this.plugin = plugin;
         this.stop = false;
-        this.animationTime = (block.getType().getHardness() / breakSpeed) / 10;
+        ConfigHandler configHandler = new ConfigHandler(plugin);
+        this.animationTime = ( configHandler.getBlockHardness(block.getType())/ configHandler.getToolBreakingPower(player.getInventory().getItemInMainHand().getType()) ) / 10;
         player.sendMessage("Animation timer: " + animationTime);
     }
 

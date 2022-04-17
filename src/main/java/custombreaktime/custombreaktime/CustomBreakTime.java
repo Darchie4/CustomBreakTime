@@ -7,6 +7,7 @@ import custombreaktime.custombreaktime.listeners.BlockBreakAbortPacketListener;
 import custombreaktime.custombreaktime.listeners.BlockDamageEventListener;
 import custombreaktime.custombreaktime.listeners.LoginListener;
 import org.bukkit.Bukkit;
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
