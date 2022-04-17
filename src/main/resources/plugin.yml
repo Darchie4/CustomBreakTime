@@ -1,0 +1,11 @@
+name: CustomBreakTime
+version: '${project.version}'
+main: custombreaktime.custombreaktime.CustomBreakTime
+api-version: 1.13
+prefix: CustomBreakTime
+authors: [ Darchie ]
+description: A Paper plugin to change the time to breake a block
+commands:
+  testings:
+    description: Gives mining fatuige
+    usage: /<command>
