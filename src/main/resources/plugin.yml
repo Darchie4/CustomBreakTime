@@ -5,6 +5,7 @@ api-version: 1.13
 prefix: CustomBreakTime
 authors: [ Darchie ]
 description: A Paper plugin to change the time to breake a block
+depend: [ProtocolLib]
 commands:
   testings:
     description: Gives mining fatuige
