@@ -1,8 +1,9 @@
-package custombreaktime.custombreaktime;
+package custombreaktime.custombreaktime.listeners;
 
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketAdapter;
 import com.comphenix.protocol.events.PacketEvent;
+import custombreaktime.custombreaktime.CustomBreakTime;
 import org.bukkit.plugin.Plugin;
 
 public class BlockBreakAbortPacketListener extends PacketAdapter {
