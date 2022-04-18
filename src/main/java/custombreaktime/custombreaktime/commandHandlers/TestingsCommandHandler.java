@@ -1,5 +1,6 @@
-package custombreaktime.custombreaktime;
+package custombreaktime.custombreaktime.commandHandlers;
 
+import custombreaktime.custombreaktime.CustomBreakTime;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -11,10 +12,10 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.logging.Level;
 
-public class CommandHandler implements CommandExecutor {
+public class TestingsCommandHandler implements CommandExecutor {
     private final CustomBreakTime plugin;
 
-    public CommandHandler(CustomBreakTime plugin) {
+    public TestingsCommandHandler(CustomBreakTime plugin) {
         this.plugin = plugin;
     }
 

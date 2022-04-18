@@ -6,6 +6,7 @@ import com.comphenix.protocol.events.PacketContainer;
 import com.comphenix.protocol.wrappers.BlockPosition;
 import org.bukkit.Bukkit;
 import org.bukkit.block.Block;
+import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
@@ -24,9 +25,14 @@ public class BreakerRunnable implements Runnable {
         this.block = block;
         this.plugin = plugin;
         this.stop = false;
-        ConfigHandler configHandler = new ConfigHandler(plugin);
-        this.animationTime = ( configHandler.getBlockHardness(block.getType())/ configHandler.getToolBreakingPower(player.getInventory().getItemInMainHand().getType()) ) / 10;
+        this.animationTime = calculateAnimationTime(new ConfigHandler(plugin));
         player.sendMessage("Animation timer: " + animationTime);
+    }
+
+    private double calculateAnimationTime(ConfigHandler configHandler){
+        double breakPower = configHandler.getToolBreakingPower(player.getInventory().getItemInMainHand().getType()) + player.getInventory().getItemInMainHand().getEnchantmentLevel(Enchantment.DIG_SPEED) * configHandler.getDigSpeedMultiplier();
+        return ( configHandler.getBlockHardness(block.getType())/  breakPower) / 10;
+
     }
 
     @Override

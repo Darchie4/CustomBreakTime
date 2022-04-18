@@ -22,7 +22,8 @@ public class BlockDamageEventListener implements Listener {
     @EventHandler
     public void onBlockDamage(BlockDamageEvent event){
         BreakTimeCalculatorUtil breakTimeCalculatorUtil = new BreakTimeCalculatorUtil(event.getPlayer());
-        if (!event.getInstaBreak()){
+        System.out.println("Player has " + event.getPlayer().hasPermission("cbt.canMine"));
+        if (!event.getInstaBreak() && event.getPlayer().hasPermission("cbt.canMine")){
             BreakerRunnable task = new BreakerRunnable(event.getPlayer(), this.protocolManager, event.getBlock(), this.plugin);
             plugin.getRunnableMap().put(event.getPlayer(), task);
             Bukkit.getScheduler().runTaskAsynchronously(plugin, task);

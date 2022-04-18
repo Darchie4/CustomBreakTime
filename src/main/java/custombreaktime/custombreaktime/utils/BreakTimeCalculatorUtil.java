@@ -32,9 +32,4 @@ public class BreakTimeCalculatorUtil {
 
         return breakingSpeed;
     }
-
-    private float test(){
-
-        return (float)0.0;
-    }
 }

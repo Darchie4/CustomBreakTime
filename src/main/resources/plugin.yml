@@ -10,3 +10,9 @@ commands:
   testings:
     description: Gives mining fatuige
     usage: /<command>
+  CBTReload:
+    description: Reloads the plugin config
+    usage: /CBTReload
+  CBTCanMine:
+    description: Sets/Removes canMine perm
+    usage: /CBTCanMine [true/false]
